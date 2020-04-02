@@ -1,0 +1,20 @@
+@import components.User
+@(maybeUser :Option[User])(implicit flash: Flash)
+
+@main("Welcome to Play") {
+  <h1>Welcome to Play!</h1>
+
+  @maybeUser.map { user =>
+    <div>
+        Welcome back @user.name (@user.email)
+        <ul>
+            @if(user.permission == components.EditPermission){ <li><a href="@routes.HomeController.viewPage">VIP Area</a></li> }
+            <li><a href="@routes.HomeController.logout">Logout</a></li>
+        </ul>
+    </div>
+  }.getOrElse {
+    <div>
+        <a href="@routes.HomeController.login">Click here to use single sign on</a>
+    </div>
+  }
+}

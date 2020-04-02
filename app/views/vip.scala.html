@@ -1,0 +1,20 @@
+@import helper._
+@()(implicit flash: Flash)
+
+@main("VIP Area") {
+<h1>Vip area for logged in users!!</h1>
+
+<div>
+    <span>Today's lottery numbers</span>
+    <span><input type="text" name="lottery" value="12345678"</span>
+
+    @form(action = routes.HomeController.editPage()) {
+        <!-- obviously we could hide this button by passing the user
+             to the page and not rendering this button if the user
+             doesn't have the correct permission but this is demonstrate
+             that authorisation does stop bad requests! -->
+        <input type="submit" value="Submit a pretend update" />
+    }
+</div>
+
+}
