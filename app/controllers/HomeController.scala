@@ -28,12 +28,12 @@ class HomeController @Inject
     // we can look at these to determine if a user is logged in and who the user is.
 
     (request.authenticator, request.identity) match {
-      case (None, None) =>
-        println("Serving index page: User isnt authenticated!")
       case (Some(_), Some(user)) =>
         println(s"Serving index page: Welcome back ${user.name}.")
         println(s"Your email is ${user.email}")
         println(s"Your loginInfo object reads: ${user.loginInfo}")
+      case _ =>
+        println("Serving index page: User isnt authenticated!")
     }
 
     Ok(views.html.index(request.identity))
