@@ -1,7 +1,7 @@
 package controllers
 
-import com.mohiva.play.silhouette.api.services.IdentityService
-import com.mohiva.play.silhouette.api.{LoginInfo, Silhouette}
+import io.github.honeycombcheesecake.play.silhouette.api.services.IdentityService
+import io.github.honeycombcheesecake.play.silhouette.api.{LoginInfo, Silhouette}
 import components.{DefaultEnv, EditPermission, HasRole, KeycloakProvider, User}
 import javax.inject._
 import play.api.mvc._
@@ -42,7 +42,7 @@ class HomeController @Inject
   def login = silhouette.UserAwareAction.async { implicit request =>
     if (request.identity.isDefined) {
       println(s"User ${request.identity.map(_.email).getOrElse("")} turned up at login page so we quickly log them out before showing it to them.")
-      Future.successful(Redirect(routes.HomeController.logout()))
+      Future.successful(Redirect(routes.HomeController.logout))
     } else {
       keycloakProvider.authenticate().flatMap {
         // Left(_) may not denote failure, it can be recursive redirects to more and more upstream keycloak servers,
@@ -120,7 +120,7 @@ class HomeController @Inject
 
   def editPage = silhouette.SecuredAction(HasRole(EditPermission)) { implicit request =>
     println(s"User ${request.identity.email} was allowed to post here. saving changes might happen here if we implemented it!")
-    Redirect(routes.HomeController.viewPage()).flashing("success" -> "Update applied by authorised user")
+    Redirect(routes.HomeController.viewPage).flashing("success" -> "Update applied by authorised user")
   }
 
 }

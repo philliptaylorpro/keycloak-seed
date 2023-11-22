@@ -6,9 +6,9 @@
 
 <div>
     <span>Today's lottery numbers</span>
-    <span><input type="text" name="lottery" value="12345678"</span>
+    <span><input type="text" name="lottery" value="12345678"></span>
 
-    @form(action = routes.HomeController.editPage()) {
+    @form(action = routes.HomeController.editPage) {
         <!-- obviously we could hide this button by passing the user
              to the page and not rendering this button if the user
              doesn't have the correct permission but this is demonstrate
