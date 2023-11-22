@@ -2,14 +2,14 @@ package components
 
 import com.google.inject.name.Named
 import com.google.inject.{AbstractModule, Provides}
-import com.mohiva.play.silhouette.api.crypto.{Crypter, CrypterAuthenticatorEncoder, Signer}
-import com.mohiva.play.silhouette.api.services.{AuthenticatorService, IdentityService}
-import com.mohiva.play.silhouette.api.util._
-import com.mohiva.play.silhouette.api._
-import com.mohiva.play.silhouette.crypto.{JcaCrypter, JcaCrypterSettings, JcaSigner, JcaSignerSettings}
-import com.mohiva.play.silhouette.impl.authenticators._
-import com.mohiva.play.silhouette.impl.providers._
-import com.mohiva.play.silhouette.impl.util.{DefaultFingerprintGenerator, SecureRandomIDGenerator}
+import io.github.honeycombcheesecake.play.silhouette.api.crypto.{Crypter, CrypterAuthenticatorEncoder, Signer}
+import io.github.honeycombcheesecake.play.silhouette.api.services.{AuthenticatorService, IdentityService}
+import io.github.honeycombcheesecake.play.silhouette.api.util._
+import io.github.honeycombcheesecake.play.silhouette.api._
+import io.github.honeycombcheesecake.play.silhouette.crypto.{JcaCrypter, JcaCrypterSettings, JcaSigner, JcaSignerSettings}
+import io.github.honeycombcheesecake.play.silhouette.impl.authenticators._
+import io.github.honeycombcheesecake.play.silhouette.impl.providers._
+import io.github.honeycombcheesecake.play.silhouette.impl.util.{DefaultFingerprintGenerator, SecureRandomIDGenerator}
 import net.codingwell.scalaguice.ScalaModule
 import play.api.Configuration
 import play.api.libs.ws.WSClient

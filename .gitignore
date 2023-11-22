@@ -1,0 +1,5 @@
+target/
+target/project
+.idea/
+logs/
+.bsp/

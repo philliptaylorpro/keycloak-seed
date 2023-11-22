@@ -4,11 +4,11 @@ package components
 // This is largely the VK provider copied and pasted but with the userInfo http get turned into a post and slightly
 // different social profile fields to accommodate Keycloak.
 
-import com.mohiva.play.silhouette.api.LoginInfo
-import com.mohiva.play.silhouette.api.util.HTTPLayer
-import com.mohiva.play.silhouette.impl.exceptions.ProfileRetrievalException
-import com.mohiva.play.silhouette.impl.providers.OAuth2Provider._
-import com.mohiva.play.silhouette.impl.providers._
+import io.github.honeycombcheesecake.play.silhouette.api.LoginInfo
+import io.github.honeycombcheesecake.play.silhouette.api.util.HTTPLayer
+import io.github.honeycombcheesecake.play.silhouette.impl.exceptions.ProfileRetrievalException
+import io.github.honeycombcheesecake.play.silhouette.impl.providers.OAuth2Provider._
+import io.github.honeycombcheesecake.play.silhouette.impl.providers._
 import play.api.libs.functional.syntax._
 import play.api.libs.json._
 
